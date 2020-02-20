@@ -12,8 +12,8 @@ const env = process.env.NODE_ENV || 'development';
 // вернёт объект содержащийся в development
 // __dirname - путь от диска = f:\postgres-express-react-node-tutorial\server\models
 const config = require(`${__dirname}/../config/config.json`)[env]; 
-const db = {};
 
+const db = {};
 let sequelize;
 
 // если мы работает с online database то можно в файле config.json изменить development блок на:
