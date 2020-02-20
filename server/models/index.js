@@ -36,16 +36,16 @@ fs
   .readdirSync(__dirname) // Console: [ 'index.js', 'todo.js', 'todoitem.js' ]
   .filter(file =>
     (file.indexOf('.') !== 0) && // file.indexOf('.') !== 0 проверяет, что в имени файла точка стоит не в начале
-    (file !== basename) && // не равняется idenx.js
+    (file !== basename) && // не равняется index.js
     (file.slice(-3) === '.js')) // file.slice(-3) - вырезает с конца 
   .forEach(file => {
     const model = sequelize.import(path.join(__dirname, file)); // Todo; TodoItem
-    db[model.name] = model; // example { TodoItem: TodoItem }
+    db[model.name] = model; // example { TodoItem: Content of TodoItem }
   });
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) { // если например todo.js содержит ф-цию associate
-    db[modelName].associate(db); // устанавливаем связь один-ко-многим
+    db[modelName].associate(db); // устанавливаем связи, вызываем ф-цию associate и передаём объект с моделями
   }
 });
 

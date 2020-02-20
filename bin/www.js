@@ -7,11 +7,3 @@ app.set('port', port); // при обращении app.get('port') получи
 
 const server = http.createServer(app);
 server.listen(port);
-
-// process.env.PORT будет считывать прописанный порт в package.json 
-// ...
-// "scripts": {
-//     "start:dev": "PORT=3000 nodemon ./bin/www",
-//     "test": "echo \"Error: no test specified\" && exit 1"
-//   }, 
-// ...
